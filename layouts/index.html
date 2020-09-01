@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ $paginator := .Paginate (where .Pages "Section" "posts") }}
+  {{ template "_internal/pagination.html" . }}
+  {{ range $paginator.Pages }}
+    {{ range .Pages }}
+    <article>
+      <h3>
+        <a href="{{ .Permalink }}">
+          {{ .Title }}
+        </a>
+      </h3>
+      <div>
+        {{ .Summary }}
+      </div>
+      <footer>
+        <small>
+          <time>{{ .Date.Format "2006/01/02" }}</time>
+        </small>
+      </footer>
+    </article>
+    {{ end }}
+  {{ end }}
+{{ end  }}
+
