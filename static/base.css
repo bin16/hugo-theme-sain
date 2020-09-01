@@ -7,3 +7,11 @@ img, video, audio {
 .p-2 {
   padding: .5rem;
 }
+
+.tag-list {
+  display: inline-flex;
+  list-style-type: none;
+}
+.tag-list li {
+  margin-right: .5rem;
+}

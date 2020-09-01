@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Page.Title }}</title>
+  <title>{{ .Page.Title }} - {{ .Site.Title }}</title>
   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
   <link rel="stylesheet" href="/base.css">
+
+  {{ hugo.Generator }}
+  <meta name="description" content="{{ .Summary }}">
+  <!-- og -->
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ block "head" . }}{{ end }}
 </head>
 <body>
   {{ partial "nav.html" . }}
@@ -14,7 +20,10 @@
 
   <footer class="p-2 text-center">
     <hr>
-    <span>&copy;2020</span>
+    <span>
+      <a href="/">{{ .Site.Title }}</a>&nbsp;&copy;2020</span>
+    <span>|</span>
+    <span>Powered by&nbsp;<a href="https://gohugo.io">Hugo</a></span>
   </footer>
 </body>
 </html>

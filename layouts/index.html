@@ -1,7 +1,12 @@
+{{ define "head" }}
+<meta property="og:title" content="{{ .Site.Title }}">
+<meta property="og:description" content="{{ .Summary }}">
+{{ end }}
+
 {{ define "main" }}
   {{ $paginator := .Paginate (where .Pages "Section" "posts") }}
   {{ template "_internal/pagination.html" . }}
-  {{ range $paginator.Pages }}
+  {{ range first 3 $paginator.Pages }}
     {{ range .Pages }}
     <article>
       <h3>
@@ -9,13 +14,12 @@
           {{ .Title }}
         </a>
       </h3>
-      <div>
-        {{ .Summary }}
-      </div>
+      <!-- <div>
+        {{ .Content }}
+      </div> -->
       <footer>
-        <small>
-          <time>{{ .Date.Format "2006/01/02" }}</time>
-        </small>
+        <time datetime="{{ .Date.Format "2006-01-02 03:04:05" }}"
+          pubdate>{{ .Date.Format "2006/01/02" }}</time>
       </footer>
     </article>
     {{ end }}
