@@ -16,10 +16,14 @@ img, video, audio {
   margin-right: .5rem;
 }
 time {
-  letter-spacing: .25rem;
+  letter-spacing: 2px;
   font-family: 'Courier New', Courier, monospace;
   color: #aaaaaa;
+  font-weight: bold;
 }
 article {
   letter-spacing: 1px;
+}
+.up {
+  text-transform: uppercase;
 }

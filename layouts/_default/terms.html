@@ -1,0 +1,19 @@
+{{ define "head" }}
+<meta property="og:type" content="article.list">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Summary }}">
+{{ end }}
+
+{{ define "main" }}
+  <h3 class="up">{{ .Title }}</h3>
+
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">
+        {{ .Title }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}
