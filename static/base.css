@@ -15,3 +15,11 @@ img, video, audio {
 .tag-list li {
   margin-right: .5rem;
 }
+time {
+  letter-spacing: .25rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: #aaaaaa;
+}
+article {
+  letter-spacing: 1px;
+}
